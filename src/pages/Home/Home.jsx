@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HeaderNav from "../../component/HeaderNav/HeaderNav";
 
 const Home = () => {
   return (
-    <div>
-      <HeaderNav />
-      <div className="card m-3">
+    <div
+      className="d-flex justify-content-center align-items-center border shadow"
+      style={{ height: "450px" }}
+    >
+      <div className="col-md-6 card m-3">
         <div className="card-header">Home</div>
         <div className="card-body">
           <h5 className="card-title">Home content </h5>

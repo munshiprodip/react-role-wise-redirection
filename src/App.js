@@ -8,12 +8,14 @@ import AuthRoute from "./lib/AuthRoute/AuthRoute";
 import Admin from "./pages/Dashboard/Admin/Admin";
 import ShopAdmin from "./pages/Dashboard/ShopAdmin/ShopAdmin";
 import User from "./pages/Dashboard/User/User";
+import HeaderNav from "./component/HeaderNav/HeaderNav";
 
 const App = () => {
   return (
     <Router>
       <Switch>
         <div className="container">
+          <HeaderNav />
           <Route exact path="/">
             <Home />
           </Route>

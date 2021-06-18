@@ -8,7 +8,8 @@ const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [loginInput, setLoginInput] = useState({});
-
+  const [loginError, setLoginError] = useState('');
+  
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const authUser = useSelector((state) => state.auth.authUser);
 
@@ -44,17 +45,16 @@ const Login = () => {
     if (response.status === 200) {
       dispatch(setAuth(response.data));
       handleRedirect(response.data);
-      console.log("ok");
     } else {
       dispatch(resetAuth(response.data));
-      console.log("response");
+      setLoginError(response.message)
     }
   };
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center"
-      style={{ height: "100vh" }}
+      className="d-flex justify-content-center align-items-center border shadow"
+      style={{ height: "450px" }}
     >
       <div className="col-md-6 border p-3 shadow text-center">
         <form onSubmit={handleSubmit}>
@@ -79,6 +79,7 @@ const Login = () => {
           </div>
           <button className="btn btn-outline-primary ">Login</button>
         </form>
+        <p>{loginError}</p>
       </div>
     </div>
   );

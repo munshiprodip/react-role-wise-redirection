@@ -31,10 +31,20 @@ const dispatch = useDispatch()
               to="/home"
               className="nav-link active"
               aria-current="page"
-              href="#"
             >
               Home
             </Link>
+            {
+              isLoggedIn &&
+              <Link
+                to={`/dashboard/${authUser.role}`}
+                className="nav-link "
+                aria-current="page"
+              >
+                Dashboard
+              </Link>
+            }
+            
             {isLoggedIn?<button  className="btn nav-link" onClick={()=>dispatch(resetAuth({}))}>
             Logout
             </button>:<Link to="/login" className="nav-link" href="#">
