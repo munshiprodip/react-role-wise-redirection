@@ -9,7 +9,7 @@ const dispatch = useDispatch()
   const isLoggedIn = useSelector(state=>state.auth.isLoggedIn)
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-info">
       <div className="container">
         <a className="navbar-brand" href="/">
            Role wise redirection

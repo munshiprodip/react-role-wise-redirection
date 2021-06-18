@@ -9,6 +9,7 @@ import Admin from "./pages/Dashboard/Admin/Admin";
 import ShopAdmin from "./pages/Dashboard/ShopAdmin/ShopAdmin";
 import User from "./pages/Dashboard/User/User";
 import HeaderNav from "./component/HeaderNav/HeaderNav";
+import Footer from "./component/Footer/Footer";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
             component={ShopAdmin}
           />
           <AuthRoute exact path="/dashboard/user" roles="user" component={User} />
+          <Footer/>
         </div>
       </Switch>
     </Router>
